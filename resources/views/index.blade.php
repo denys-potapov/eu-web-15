@@ -97,7 +97,7 @@
               url: "/path",
               data: $("#findForm").serialize(), // serializes the form's elements. 
               success: function(points)
-              {c
+              {
                 for (index = 0; index < points.length; ++index) {
                   $("#path").append("<li>" + points[index].name + " <b>" + points[index].time + "′</b></li>");
                 }
