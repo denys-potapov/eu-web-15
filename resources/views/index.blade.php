@@ -79,11 +79,11 @@
               data: $("#addForm").serialize(), // serializes the form's elements. 
               success: function(data)
               {
-                alert(data); // show response from the php script.
+                $("#connections").append("<li>" + data.from  + " ⟷ " + data.to + " <b>" + data.time + "′</b></li>");
               },
-              error: function(data)
+              error: function(xhr)
               {
-                alert("error", data);
+                alert(xhr.responseText);
               }
           });
           e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -97,14 +97,14 @@
               url: "/path",
               data: $("#findForm").serialize(), // serializes the form's elements. 
               success: function(points)
-              {
+              {c
                 for (index = 0; index < points.length; ++index) {
                   $("#path").append("<li>" + points[index].name + " <b>" + points[index].time + "′</b></li>");
                 }
               },
-              error: function(data)
+              error: function(xhr)
               {
-                alert("error", data);
+                alert(xhr.responseText);
               }
           });
            // avoid to execute the actual submit of the form.
