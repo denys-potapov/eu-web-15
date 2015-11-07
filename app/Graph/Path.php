@@ -7,12 +7,26 @@ namespace App\Graph;
  */
 class Path
 {
-    public $lengh;
-
+    /**
+     * Array of path vertexes
+     *
+     * @var array
+     */
     public $vertexes = array();
 
+    /**
+     * Array of path distances
+     *
+     * @var array
+     */
     public $distances = array();
 
+    /**
+     * Add path part
+     *
+     * @param integer $vertex
+     * @param integer $distance
+     */
     public function add($vertex, $distance)
     {
         array_unshift($this->vertexes, $vertex);
